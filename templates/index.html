@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather API</title>
+</head>
+<body>
+    <h1>Weather API Wrapper</h1>
+    <form id="weatherForm">
+        <input type="text" name="city" placeholder="Enter city name">
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+document.getElementById("weatherForm").onsubmit = async (e) => {
+    e.preventDefault();  // stop page reload
+    const city = e.target.city.value;
+
+    try {
+        const res = await fetch(`/weather/${city}`);
+        const data = await res.json();
+
+        if (data.error) {
+            document.getElementById("result").innerText = "Error: " + data.error;
+        } else {
+            document.getElementById("result").innerText =
+                `${data.city}: ${data.temperature}°C, ${data.condition}, ${description}`;
+        }
+    } catch (err) {
+        document.getElementById("result").innerText = "Failed to fetch weather.";
+    }
+};
+</script>
+
+</body>
+</html>
