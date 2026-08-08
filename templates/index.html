@@ -13,7 +13,7 @@
 
     <script>
 document.getElementById("weatherForm").onsubmit = async (e) => {
-    e.preventDefault();  // stop page reload
+    e.preventDefault();
     const city = e.target.city.value;
 
     try {
@@ -23,14 +23,21 @@ document.getElementById("weatherForm").onsubmit = async (e) => {
         if (data.error) {
             document.getElementById("result").innerText = "Error: " + data.error;
         } else {
-            document.getElementById("result").innerText =
-                `${data.city}: ${data.temperature}°C, ${data.condition}, ${description}`;
+            document.getElementById("result").innerHTML = `
+                <strong>${data.city}</strong><br>
+                Temperature: ${data.temperature}°C<br>
+                Feels Like: ${data.feelslike}°C<br>
+                Humidity: ${data.humidity}%<br>
+                Condition: ${data.condition}<br>
+                Description: ${data.description}, <img src="${data.icon}" alt="Weather Icon">
+            `;
         }
     } catch (err) {
         document.getElementById("result").innerText = "Failed to fetch weather.";
     }
 };
 </script>
+
 
 </body>
 </html>
