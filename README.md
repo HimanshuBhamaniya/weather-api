@@ -3,6 +3,7 @@
 A simple, modular **Weather API web app** built with Python (Flask).  
 It fetches live weather data from [Visual Crossing](https://www.visualcrossing.com/) and exposes it through a clean API and minimal web UI.  
 Includes caching (Redis), rate limiting, and error handling for production‑ready performance.
+This project is inspired by the [roadmap.sh Weather API project](https://roadmap.sh/projects/weather-api-wrapper-service)
 
 ---
 
