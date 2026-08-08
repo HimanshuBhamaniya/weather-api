@@ -15,11 +15,15 @@ def fetch_weather(city: str):
 
     data = response.json()
     result = {
-        "city": city,
-        "temperature": data["currentConditions"]["temp"],
-        "condition": data["currentConditions"]["conditions"],
-        "description": "description"
-    }
+    "city": city,
+    "temperature": data["currentConditions"]["temp"],
+    "condition": data["currentConditions"]["conditions"],
+    "feelslike": data["currentConditions"]["feelslike"],
+    "description": data["description"],  
+    "humidity": data["currentConditions"]["humidity"],
+    "icon": data["currentConditions"]["icon"]  
+}
+
 
     cache.setex(city, 43200, str(result))
     return result
