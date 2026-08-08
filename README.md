@@ -98,17 +98,16 @@ json
 ## 🎨 Web UI
 . Minimal HTML form (index.html) to enter a city name.
 
-. Displays:
-
-    . Temperature
-
-    . Feels Like
-
-    . Humidity
-
-    . Condition
-
-    . Description
+. Displays: City, Temperature, Feels like, Humidity, Condition, Description.
+**Example**
+```text
+Bangalore,IN
+Temperature: 27.9°C
+Feels Like: 30.5°C
+Humidity: 70%
+Condition: Partially cloudy
+Description: Similar temperatures continuing with a chance of rain multiple days.
+```
 
 ---
 ## 🛡 Features
